@@ -1,7 +1,6 @@
 package cl.SalmonesAustral.Trazabilidad.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import cl.SalmonesAustral.Trazabilidad.dto.*;
 import cl.SalmonesAustral.Trazabilidad.mapper.TrazabilidadMapper;
@@ -10,12 +9,6 @@ import cl.SalmonesAustral.Trazabilidad.model.Trazabilidad;
 import cl.SalmonesAustral.Trazabilidad.service.TrazabilidadService;
 
 import java.util.List;
-
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 
 
@@ -29,12 +22,23 @@ public class TrazabilidadController {
     public TrazabilidadController(TrazabilidadService trazabilidadService) {
         this.trazabilidadService = trazabilidadService;
     }
-
+    //obtener todo
     @GetMapping
     public List<Trazabilidad> getAllTrazabilidad() {
-        return trazabilidadService.getAllTrazabilidad();
+        return trazabilidadService.getTodoTrazabilidad();
     }
-    //dto Crear
+    //borrar
+    @DeleteMapping("/{id}")
+    public void deleteTrazabilidad(@PathVariable("id") int id) {
+        trazabilidadService.deleteTrazabilidad(id);
+    }
+    //encontrar por id(tabla)
+    @GetMapping("/{id}")
+    public Trazabilidad getTrazabilidadById(@PathVariable("id") int id) {
+        return trazabilidadService.getIdTrazabilidad(id);
+    }
+
+    //dto + Crear
     @PostMapping
     public Trazabilidad setTrazabilidadCreate(@RequestBody CreateTrazabilidadRequest createTrazabilidad) {
         Trazabilidad trazabilidad = TrazabilidadMapper.toTrazabilidadCreate(createTrazabilidad);
@@ -46,10 +50,10 @@ public class TrazabilidadController {
         trazabilidad.getOrigen();
         trazabilidad.getReferenciaId();
         trazabilidad.getFecha();
-        this.trazabilidadService.setIdTrazabilidad(trazabilidad);
+        this.trazabilidadService.setIdTrazabilidad(trazabilidad);   //actualizar
         return trazabilidad;
     }
-    //dto Actualizar
+    //dto + Actualizar
     @PutMapping("/{id}")
     public Trazabilidad updateTrazabilidad(
         @PathVariable("id") int id, 
@@ -63,7 +67,7 @@ public class TrazabilidadController {
         trazabilidad.getOrigen();
         trazabilidad.getReferenciaId();
         trazabilidad.getFecha();
-        this.trazabilidadService.setIdTrazabilidad(trazabilidad);
+        this.trazabilidadService.setIdTrazabilidad(trazabilidad);   //actualizar
         return trazabilidad;
     }
     

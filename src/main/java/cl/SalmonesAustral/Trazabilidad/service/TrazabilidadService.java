@@ -12,16 +12,20 @@ import cl.SalmonesAustral.Trazabilidad.model.Trazabilidad;
 public class TrazabilidadService {
     @Autowired
     private TrazabilidadRepository trazabilidadRepository;
-
-    public List<Trazabilidad> getAllTrazabilidad() {
+    //obtener todo
+    public List<Trazabilidad> getTodoTrazabilidad() {
         return trazabilidadRepository.findAll();
     }
-    //
+    //borrar
+    public void deleteTrazabilidad(int id) {
+        trazabilidadRepository.deleteById(id);
+    }
+    //obtener por id o nulo
     public Trazabilidad getIdTrazabilidad(int variable)
     {
         return trazabilidadRepository.findById(variable).orElse(null);
     }
-    //
+    //guardar o actualizar
     public void setIdTrazabilidad(Trazabilidad trazabilidad){
         trazabilidadRepository.save(trazabilidad);
     }
