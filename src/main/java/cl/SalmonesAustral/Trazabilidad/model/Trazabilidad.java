@@ -21,9 +21,6 @@ public class Trazabilidad {
     @Column(name="idTrazabilidad",nullable=false, length = 20)
     private int idTrazabilidad;
 
-    @Column(name="jaulaId",nullable=false, length = 20)
-    private int jaulaId;
-
     @Column(name="tipoEvento",nullable=false, length = 100)
     private String tipoEvento;
 
@@ -42,7 +39,6 @@ public class Trazabilidad {
     public int getId(){
         return id;
     }
-
     public void setId(int id){
         this.id= id;
     }
@@ -50,23 +46,13 @@ public class Trazabilidad {
     public int getIdTrazabilidad(){
         return idTrazabilidad;
     }
-
     public void setIdTrazabilidad(int idTrazabilidad){
         this.idTrazabilidad= idTrazabilidad;
-    }
-
-    public int getJaulaId(){
-        return jaulaId;
-    }
-
-    public void setJaulaId(int jaulaId){
-        this.jaulaId= jaulaId;
     }
 
     public String getTipoEvento(){
         return tipoEvento;
     }
-    
     public void setTipoEvento(String tipoEvento){
         this.tipoEvento= tipoEvento;
     }
@@ -74,7 +60,6 @@ public class Trazabilidad {
     public String getDescripcion(){
         return descripcion;
     }
-
     public void setDescripcion(String descripcion){
         this.descripcion= descripcion;
     }
@@ -82,7 +67,6 @@ public class Trazabilidad {
     public String getOrigen(){
         return origen;
     }
-
     public void setOrigen(String origen){
         this.origen= origen;
     }
@@ -90,7 +74,6 @@ public class Trazabilidad {
     public int getReferenciaId(){
         return referenciaId;
     }
-
     public void setReferenciaId(int referenciaId){
         this.referenciaId= referenciaId;
     }
@@ -98,7 +81,6 @@ public class Trazabilidad {
     public String getFecha(){
         return fecha;
     }
-
     public void setFecha(String fecha){
         this.fecha= fecha;
     }

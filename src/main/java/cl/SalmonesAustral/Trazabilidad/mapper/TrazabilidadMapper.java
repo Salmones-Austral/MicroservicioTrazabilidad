@@ -9,7 +9,6 @@ public class TrazabilidadMapper {
         Trazabilidad trazabilidad = new Trazabilidad();
         //el id no va en create al ser autogenerado
         trazabilidad.setIdTrazabilidad(request.idTrazabilidad());
-        trazabilidad.setJaulaId(request.jaulaId());
         trazabilidad.setTipoEvento(request.tipoEvento());
         trazabilidad.setDescripcion(request.descripcion());
         trazabilidad.setOrigen(request.origen());
@@ -22,7 +21,6 @@ public class TrazabilidadMapper {
         Trazabilidad trazabilidad = new Trazabilidad();
         //el id sera el endpoint
         trazabilidad.setIdTrazabilidad(request.idTrazabilidad());
-        trazabilidad.setJaulaId(request.jaulaId());
         trazabilidad.setTipoEvento(request.tipoEvento());
         trazabilidad.setDescripcion(request.descripcion());
         trazabilidad.setOrigen(request.origen());

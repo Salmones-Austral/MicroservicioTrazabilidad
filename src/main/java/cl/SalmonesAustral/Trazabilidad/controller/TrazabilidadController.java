@@ -44,7 +44,6 @@ public class TrazabilidadController {
         Trazabilidad trazabilidad = TrazabilidadMapper.toTrazabilidadCreate(createTrazabilidad);
         trazabilidad.getId();
         trazabilidad.getIdTrazabilidad();
-        trazabilidad.getJaulaId();
         trazabilidad.getTipoEvento();
         trazabilidad.getDescripcion();
         trazabilidad.getOrigen();
@@ -61,7 +60,6 @@ public class TrazabilidadController {
         Trazabilidad trazabilidad = TrazabilidadMapper.toTrazabilidadUpdate(id, updateTrazabilidad);
         trazabilidad.getId();
         trazabilidad.getIdTrazabilidad();
-        trazabilidad.getJaulaId();
         trazabilidad.getTipoEvento();
         trazabilidad.getDescripcion();
         trazabilidad.getOrigen();
