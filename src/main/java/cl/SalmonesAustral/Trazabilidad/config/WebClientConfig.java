@@ -25,6 +25,6 @@ public class WebClientConfig {
     }
     @Bean
     public WebClient sanitariosWebClient(WebClient.Builder builder) {
-        return builder.baseUrl("http://localhost:8087/api/v1/sanitarios").build();
+        return builder.baseUrl("http://localhost:8093/api/v1/sanitarios").build();
     }
 }
