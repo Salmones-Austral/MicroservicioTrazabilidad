@@ -18,9 +18,6 @@ public class Trazabilidad {
     @Column(name="id")
     private int id;
 
-    @Column(name="idTrazabilidad",nullable=false, length = 20)
-    private int idTrazabilidad;
-
     @Column(name="tipoEvento",nullable=false, length = 100)
     private String tipoEvento;
 
@@ -41,13 +38,6 @@ public class Trazabilidad {
     }
     public void setId(int id){
         this.id= id;
-    }
-
-    public int getIdTrazabilidad(){
-        return idTrazabilidad;
-    }
-    public void setIdTrazabilidad(int idTrazabilidad){
-        this.idTrazabilidad= idTrazabilidad;
     }
 
     public String getTipoEvento(){

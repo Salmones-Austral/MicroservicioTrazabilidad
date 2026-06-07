@@ -11,5 +11,20 @@ public class WebClientConfig {
     public WebClient.Builder webClientBuilder() {
         return WebClient.builder();
     }
-    
+    @Bean
+    public WebClient criaderosWebClient(WebClient.Builder builder) {
+        return builder.baseUrl("http://localhost:8080/api/v1/criaderos").build();
+    }
+    @Bean
+    public WebClient jaulasWebClient(WebClient.Builder builder) {
+        return builder.baseUrl("http://localhost:8081/api/v1/jaulas").build();
+    }
+    @Bean
+    public WebClient mortalidadesWebClient(WebClient.Builder builder) {
+        return builder.baseUrl("http://localhost:8082/api/v1/mortalidades").build();
+    }
+    @Bean
+    public WebClient sanitariosWebClient(WebClient.Builder builder) {
+        return builder.baseUrl("http://localhost:8087/api/v1/sanitarios").build();
+    }
 }
