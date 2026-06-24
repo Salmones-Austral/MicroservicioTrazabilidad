@@ -4,10 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 public record CreateTrazabilidadRequest(
-
-    @Positive(message = "El id de la jaula debe ser un número positivo")
-    int jaulaId,
-
     @NotBlank(message = "El tipo de evento no puede estar vacio")
     String tipoEvento,
 
