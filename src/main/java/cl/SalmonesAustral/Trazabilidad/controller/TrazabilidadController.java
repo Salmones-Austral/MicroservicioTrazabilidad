@@ -20,7 +20,7 @@ import org.springframework.validation.BindingResult;
 
 
 @RestController
-@RequestMapping("/api/v1/trazabilidad")
+@RequestMapping("/api/v1/Trazabilidad")
 public class TrazabilidadController {
 
     private final TrazabilidadService trazabilidadService;

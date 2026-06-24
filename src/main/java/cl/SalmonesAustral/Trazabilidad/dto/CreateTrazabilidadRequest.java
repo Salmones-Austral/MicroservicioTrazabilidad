@@ -4,8 +4,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 
 public record CreateTrazabilidadRequest(
-    @Positive(message = "El id del proceso debe ser un número positivo") 
-    int idTrazabilidad,
 
     @Positive(message = "El id de la jaula debe ser un número positivo")
     int jaulaId,
